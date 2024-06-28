@@ -1,0 +1,39 @@
+Consolidador de dados
+
+Capturar arquivos de dados e agrupá-los em um único arquivo
+
+✅ Definir pasta de origem
+✅ Validar os arquivos (.csv/.xlsx)
+✅ Ler arquivos
+✅ Gerar consolidado
+✅ Salvar
+✅ Criar classe consolidador
+
+### FILTROS ###
+✅ Definir pattern do nome do arquivo (exemplo 'teste_')
+✅ Definir um período de tempo (ano_mes_dia -> 'teste_20240403' -> 'teste_20240325')
+✅ Definir extensão de arquivos
+✅ Evitar duplicatas
+
+### SETTINGS ###
+✅ Definir parâmetros para leitura de CSV (delimitador, separador)
+
+### INTERFACE ###
+✅ começar a integrar com a biblioteca EEL
+✅ definir layout inicial da interface
+✅ interagir web <-> python
+✅ trabalhar campos iniciais
+ - verificar casos de entrada de data
+ - finalizar consolidador
+ - explorar campos adicionais
+ - Definir os tipos das colunas
+ -- Criar colunas
+ -- Excluir colunas
+ -- Limpar vazios
+ - Preview
+ - Permitir juntar os arquivos mesmo que não tenham todas as colunas [a, b, c] + [a, b] -> [a, b]
+
+**Gerar um arquivo python de acordo com as configurações dadas
+ - Criar arquivo com as configurações do consolidador personalizado
+ - Gerar arquivo python
+ 

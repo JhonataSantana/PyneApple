@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon.ico">
+    <title>PyneApple</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" type="text/css" href="./src/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./src/css/main.css">
+</head>
+<body>
+    <div id="main-frame" class="container-fluid bg-light">
+        <div class="row">
+
+            <aside class="col-3 p-0 bg-light">
+
+                <div class="d-flex flex-column bg-light">
+
+                    <header class="p-3">
+                        <img src="./src/img/logo.png" alt="PineApple">
+                    </header>
+
+                    <nav class="py-3 flex-grow-1">
+
+                        <ul class="nav flex-column">
+
+                            <li class="nav-item">
+                              <a class="nav-link active d-flex align-items-center py-3" href="#">
+                                <span class="material-symbols-outlined mr-3">stacks</span>
+                                Consolidador
+                            </a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link d-flex align-items-center py-3 disabled" href="#">
+                                <span class="material-symbols-outlined mr-3">api</span>
+                                Consultar API
+                            </a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link d-flex align-items-center py-3 disabled" href="#">
+                                <span class="material-symbols-outlined mr-3">family_history</span>
+                                Catcher
+                            </a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link d-flex align-items-center py-3 disabled" href="#">
+                                <span class="material-symbols-outlined mr-3">monitoring</span>
+                                Plotter
+                              </a>
+                            </li>
+
+                          </ul>
+
+                    </nav>
+
+                    <footer class="p-3">
+
+                        <div class="account d-flex align-items-center">
+
+                            <div class="photo bg-dark rounded-circle mr-3"></div>
+                            <span>Jhonata Santana</span>
+
+                        </div>
+
+                    </footer>
+
+                </div>
+
+            </aside>
+
+            <main class="col-9 p-0 d-flex flex-column bg-white">
+                
+                <div class="container">
+
+                    <header class="p-3 border-bottom bg-white">
+                        <h1><span class="material-symbols-outlined mr-3">stacks</span>Consolidador</h1>
+                    </header>
+    
+                    <section class="p-3 flex-grow-1">
+    
+                        <form id="consolidador">
+    
+                            <h3>Encontrar arquivos <span class="badge badge-secondary">.xlsx</span> <span class="badge badge-secondary">.csv</span></h3>
+                            <div class="my-3">
+                                
+                                <div class="form-group p-0 mb-3">
+    
+                                    <label for="origin_path">Pasta de origem*</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="origin_path" name="origin_path" placeholder="C:/user/arquivos/planilhas" aria-label="Pasta de origem" aria-describedby="origin_path">
+                                        <div class="input-group-append">
+                                          <button class="btn btn-outline-primary" type="button" id="origin_path_btn">Selecionar pasta</button>
+                                        </div>
+                                    </div>
+    
+                                </div>
+        
+                                <div class="form-row mb-3">
+    
+                                    <div class="col">
+                                        <label for="substring">Substring</label>
+                                        <input type="text" id="substring" class="form-control" placeholder="Substring de busca">
+                                    </div>
+    
+                                    <div class="col">
+                                        <label for="start_date">Data Inicial</label>
+                                        <input type="date" id="start_date" class="form-control">
+                                    </div>
+    
+                                    <div class="col">
+                                        <label for="end_date">Data Final</label>
+                                        <input type="date" id="end_date" class="form-control">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="separator">Separador</label>
+                                        <input type="text" id="separator" class="form-control" placeholder="Padrão: , (vírgula)">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="delimiter">Delimitador</label>
+                                        <input type="text" id="delimiter" class="form-control" placeholder="Padrão: ; (ponto e vírgula)">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="encoder">Codificação</label>
+                                        <input type="text" id="encoder" class="form-control" placeholder="Padrão: UTF-8">
+                                    </div>
+    
+                                </div>
+
+                                <div class="form-row mb-3">
+                                    
+                                </div>
+    
+                                <div class="bg-white py-3 d-flex justify-content-end border-top">
+                                    <input type="button" id="search_files" class="btn btn-primary ml-3" value="Buscar">
+                                </div>
+    
+                            </div>
+    
+                            <h3>Selecionar arquivos</h3>
+                            <div class="my-3">
+    
+                                <header class="d-flex justify-content-between align-items-center my-3">
+    
+                                    <span class="file_list_counter">Selecione uma pasta</span>
+    
+                                    <div class="d-flex justify-content-between align-items-center">
+    
+                                        <label class="lbl_checkbox d-flex align-items-center m-0" for="select_all_files">
+                                            <input type="checkbox" id="select_all_files" class="invisible">
+                                            <span class="material-symbols-outlined action">check_box</span>
+                                            <span class="material-symbols-outlined action">check_box_outline_blank</span>
+                                            <p class="m-0 mr-3 ml-2">Selecionar todos</p>
+                                        </label>
+    
+                                        <div class="form-group m-0">
+                                            <select class="form-control" id="sort">
+                                                <option>Ordenar por nome A-Z</option>
+                                                <option>Ordenar por nome Z-A</option>
+                                                <option>Maior armazenamento</option>
+                                                <option>Menor armazenamento</option>
+                                            </select>
+                                        </div>
+    
+                                    </div>
+    
+                                </header>
+    
+                                <ul class="list-group p-0 file_list"></ul>
+    
+                            </div>
+    
+                        </form>
+    
+                    </section>
+    
+                    <footer class="bg-white p-3 d-flex justify-content-end border-top">
+    
+                        <input class="btn btn-primary ml-3" type="button" value="Consolidar">
+    
+                    </footer>
+
+                </div>
+
+            </main>
+
+        </div>
+        
+    </div>
+
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="./src/js/main.js"></script>
+</body>
+</html>
